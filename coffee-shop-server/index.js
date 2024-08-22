@@ -11,9 +11,10 @@ app.use(cors());
 app.use(express.json());
 
 const password = process.env.PASSWORD;
+const user = process.env.USER;
 
 
-const uri = `mongodb+srv://coffeeShopAdmin:${password}@cluster-shop.s8tc27p.mongodb.net/?retryWrites=true&w=majority&appName=Cluster-shop`;
+const uri = `mongodb+srv://${user}:${password}@cluster-shop.s8tc27p.mongodb.net/?retryWrites=true&w=majority&appName=Cluster-shop`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -33,7 +34,7 @@ async function run() {
         console.log("Pinged your deployment. You successfully connected to MongoDB!");
     } finally {
         // Ensures that the client will close when you finish/error
-        await client.close();
+        // await client.close();
     }
 }
 run().catch(console.dir);
