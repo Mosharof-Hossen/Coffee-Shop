@@ -5,7 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "raleway-c": '"Raleway", sans-serif',
+        'rancho-c': '"Rancho", cursive'
+      },
+      backgroundImage:{
+        'nav-c' : "url('./src/assets/more/15.jpg')"
+      }
+    },
   },
   // eslint-disable-next-line no-undef
   plugins: [require('daisyui'),],
