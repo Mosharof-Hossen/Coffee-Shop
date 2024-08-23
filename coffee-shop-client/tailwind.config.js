@@ -16,7 +16,8 @@ export default {
       },
       colors: {
         'primary-c': "#242222",
-        'primary-b-c': "#E3B577"
+        'primary-b-c': "#D2B48C",
+        'primary-t-c': "#374151"
       }
     },
   },
