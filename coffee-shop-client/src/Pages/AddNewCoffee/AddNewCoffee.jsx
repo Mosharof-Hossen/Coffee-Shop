@@ -1,17 +1,38 @@
 import { useForm } from "react-hook-form";
 import { FaArrowLeft } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 const AddNewCoffee = () => {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm()
 
-    const onSubmit = (data) => console.log(data)
+    const onSubmit = (data) => {
+        fetch("http://localhost:3000/coffees", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(data)
 
-    console.log(errors)
+        })
+            .then(res => res.json())
+            .then(result => {
+                if (result.insertedId) {
+                    Swal.fire({
+                        title: 'Your work has been saved',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                    reset()
+                }
+            })
+    }
+
     return (
         <div className="md:mx-20 mx-1 my-10 space-y-10">
             <Link to={"/"}><button className="flex items-center gap-1 text-primary-t-c text-2xl" style={{ textShadow: "0px 0px 3px" }} type="button"><FaArrowLeft></FaArrowLeft> <span className="">Back To Home</span> </button></Link>
@@ -52,6 +73,15 @@ const AddNewCoffee = () => {
                                         )
                                     }
                                 </label>
+                                <label className="">
+                                    <p className="my-2 font-semibold text-xl">Quantity</p>
+                                    <input className="px-2 py-2 w-full rounded" type="number" placeholder="Enter Coffee Quantity" {...register("quantity", { required: true, maxLength: 80 })} />
+                                    {
+                                        errors?.quantity?.type === "required" && (
+                                            <p className="text-sm mt-1 text-red-500 " role="alert">Coffee quantity is Required.</p>
+                                        )
+                                    }
+                                </label>
                             </div>
                             <div className="flex-1">
                                 <label className="">
@@ -78,6 +108,15 @@ const AddNewCoffee = () => {
                                     {
                                         errors?.details?.type === "required" && (
                                             <p className="text-sm mt-1 text-red-500 " role="alert">Details is Required.</p>
+                                        )
+                                    }
+                                </label>
+                                <label className="">
+                                    <p className="my-2 font-semibold text-xl">Price</p>
+                                    <input className="px-2 py-2 w-full rounded" type="number" placeholder="Enter Coffee price" {...register("price", { required: true, maxLength: 80 })} />
+                                    {
+                                        errors?.price?.type === "required" && (
+                                            <p className="text-sm mt-1 text-red-500 " role="alert">Price is Required.</p>
                                         )
                                     }
                                 </label>
