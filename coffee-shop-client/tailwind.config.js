@@ -10,8 +10,13 @@ export default {
         "raleway-c": '"Raleway", sans-serif',
         'rancho-c': '"Rancho", cursive'
       },
-      backgroundImage:{
-        'nav-c' : "url('./src/assets/more/15.jpg')"
+      backgroundImage: {
+        'nav-c': "url('./src/assets/more/15.jpg')",
+        'banner-bg': "url('./src/assets/more/3.png')"
+      },
+      colors: {
+        'primary-c': "#242222",
+        'primary-b-c': "#E3B577"
       }
     },
   },
