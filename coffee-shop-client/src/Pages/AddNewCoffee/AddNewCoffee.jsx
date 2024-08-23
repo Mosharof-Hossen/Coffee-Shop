@@ -35,13 +35,13 @@ const AddNewCoffee = () => {
 
     return (
         <div className="md:mx-20 mx-1 my-10 space-y-10">
-            <Link to={"/"}><button className="flex items-center gap-1 text-primary-t-c text-2xl" style={{ textShadow: "0px 0px 3px" }} type="button"><FaArrowLeft></FaArrowLeft> <span className="">Back To Home</span> </button></Link>
+            <Link to={"/"}><button className="flex items-center gap-1 font-raleway-c text-primary-t-c text-2xl" style={{ textShadow: "0px 0px 3px" }} type="button"><FaArrowLeft></FaArrowLeft> <span className="">Back To Home</span> </button></Link>
             <div className=" md:px-10 py-10 bg-[#F4F3F0] rounded">
                 <div className="text-center md:px-10 px-1 space-y-6">
                     <h2 className="font-rancho-c text-4xl" style={{ textShadow: "0px 0px 3px" }}>Add New Coffee</h2>
-                    <p className=" text-gray-500 text-center">It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
+                    <p className=" text-gray-500 text-center font-raleway-c">It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
                 </div>
-                <div className="px-5 md:px-0">
+                <div className="px-5 md:px-0 font-raleway-c">
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="flex md:gap-5 gap-0 md:flex-row flex-col">

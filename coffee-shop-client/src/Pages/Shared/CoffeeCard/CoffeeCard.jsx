@@ -6,7 +6,7 @@ const CoffeeCard = ({ coffee }) => {
     const { coffeeName, chef, price, photo_url, _id } = coffee
     console.log(coffee);
     return (
-        <div className="card lg:card-side bg-slate-100 rounded ">
+        <div className="card lg:card-side bg-slate-100 rounded font-raleway-c">
             <figure>
                 <img
                     src={photo_url}
