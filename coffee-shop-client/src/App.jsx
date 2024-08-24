@@ -7,10 +7,14 @@ import Footer from './Pages/Shared/Footer/Footer'
 function App() {
 
   return (
-    <div className=''>
-      <Navbar></Navbar>
-      <Outlet></Outlet>
-      <Footer></Footer>
+    <div className='min-h-screen flex flex-col'>
+      <div className='flex-grow'>
+        <Navbar></Navbar>
+        <Outlet></Outlet>
+      </div>
+      <div className=''>
+        <Footer></Footer>
+      </div>
     </div>
   )
 }

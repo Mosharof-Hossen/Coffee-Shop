@@ -18,21 +18,18 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Features></Features>
-            <div className="relative mt-16 "
-            >
-                <div
-                    className="absolute inset-0 z-10 bg-cover bg-no-repeat bg-center "
-                    style={{
-                        backgroundImage: "url('https://i.ibb.co/wzJkXDH/1.png')",
+            <div className=" mt-16 bg-cover bg-no-repeat"
+                style={{
+                    backgroundImage: "url('https://i.ibb.co/wzJkXDH/1.png')",
 
-                    }}
-                ></div>
-                <div className="space-y-3 text-center mb-10  relative z-0">
+                }}
+            >
+                <div className="space-y-3 text-center mb-10  ">
                     <p className="text-xl font-raleway-c">--- Sip & Savor ---</p>
                     <h3 className="text-6xl text-primary-c font-rancho-c" style={{ textShadow: "0px 0px 5px" }} >Our Popular Products</h3>
-                    <Link to={"/add-new-coffee"}><button style={{ textShadow: "0px 0px 5px" }} className="mx-auto px-3 mt-6 rounded font-rancho-c text-2xl py-1 flex items-center gap-2 border-2 border-primary-c bg-primary-b-c text-white"><span>Add Coffee</span><FaMugHot className="text-primary-c"></FaMugHot></button></Link>
+                    <Link to={"/add-new-coffee"}><button style={{ textShadow: "0px 0px 5px" }} className="mx-auto px-3 mt-6 rounded font-rancho-c text-2xl py-1 flex items-center gap-2 border-2 border-primary-c bg-primary-b-c text-white cursor-pointer"><span>Add Coffee</span><FaMugHot className="text-primary-c"></FaMugHot></button></Link>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 p-5 relative z-0 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 p-5  max-w-6xl mx-auto">
 
                     {
                         coffees.map(coffee => <CoffeeCard key={coffee._id} handleDeleteDisplay={handleDeleteDisplay} coffee={coffee}></CoffeeCard>)
