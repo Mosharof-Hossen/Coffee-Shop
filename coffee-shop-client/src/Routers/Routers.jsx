@@ -4,11 +4,13 @@ import Home from '../Pages/Home/Home';
 import AddNewCoffee from '../Pages/AddNewCoffee/AddNewCoffee';
 import UpdateCoffee from '../Pages/UpdateCoffee/UpdateCoffee';
 import CoffeeDetails from '../Pages/CoffeeDetails/CoffeeDetails';
+import ErrorPage from '../Pages/Shared/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <App></App>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
