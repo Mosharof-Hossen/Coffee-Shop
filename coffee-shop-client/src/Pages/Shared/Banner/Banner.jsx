@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         <div
 
-            className="hero h-[550px] bg-banner-bg bg-cover bg-center bg-no-repeat"
+            className="hero h-[550px] bg-cover bg-center bg-no-repeat bg-[url(https://i.ibb.co/F7kr0Xp/3.png)]" 
 
         >
             <div className="hero-overlay "></div>

@@ -24,7 +24,7 @@ const AddNewCoffee = () => {
             .then(result => {
                 if (result.insertedId) {
                     Swal.fire({
-                        title: 'Your work has been saved',
+                        title: 'New Coffee has been saved',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })

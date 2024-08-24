@@ -28,7 +28,7 @@ const CoffeeCard = ({ coffee ,handleDeleteDisplay }) => {
                             handleDeleteDisplay(id)
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Your file has been deleted.",
+                                text: "Coffee has been deleted.",
                                 icon: "success"
                             });
                         }
@@ -52,7 +52,7 @@ const CoffeeCard = ({ coffee ,handleDeleteDisplay }) => {
 
                 </div>
                 <div className="flex md:flex-col flex-row gap-3 mt-5 md:mt-0">
-                    <button className=" p-2 rounded bg-primary-b-c"><FaRegEye className='text-white'></FaRegEye></button>
+                    <Link to={`/coffee-detail/${_id}`}><button className=" p-2 rounded bg-primary-b-c"><FaRegEye className='text-white'></FaRegEye></button></Link>
                     <Link to={`/update-coffee/${_id}`}><button className=" p-2 rounded bg-black"><FaPen className='text-white'></FaPen></button></Link>
                     <button onClick={() => handleDelete(_id)} className=" p-2 rounded bg-red-500"><FaRegTrashCan className='text-white'></FaRegTrashCan></button>
                 </div>
