@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 require("dotenv").config();
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const app = express();
 
 const port = process.env.PORT || 3000;
@@ -35,7 +35,7 @@ async function run() {
         app.get("/coffees", async (req, res) => {
             const cursor = coffeeCollection.find();
             const result = await cursor.toArray();
-            res.send(result) 
+            res.send(result)
         })
 
         app.post("/coffees", async (req, res) => {
@@ -44,6 +44,12 @@ async function run() {
             res.send(result)
         })
 
+        app.delete("/coffee/:id", async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: new ObjectId(id) };
+            const result = await coffeeCollection.deleteOne(query);
+            res.send(result)
+        })
 
         await client.db("admin").command({ ping: 1 });
         console.log("Pinged your deployment. You successfully connected to MongoDB!");

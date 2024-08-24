@@ -1,10 +1,41 @@
 
 import PropTypes from 'prop-types';
 import { FaPen, FaRegEye, FaRegTrashCan } from 'react-icons/fa6';
+import Swal from 'sweetalert2';
 
-const CoffeeCard = ({ coffee }) => {
+const CoffeeCard = ({ coffee ,handleDeleteDisplay }) => {
     const { coffeeName, chef, price, photo_url, _id } = coffee
-    console.log(coffee);
+   
+
+    const handleDelete = id => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:3000/coffee/${id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(result => {
+                        if (result.deletedCount > 0) {
+                            handleDeleteDisplay(id)
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                    })
+
+            }
+        });
+    }
     return (
         <div className="card lg:card-side bg-slate-100 rounded font-raleway-c">
             <figure>
@@ -22,7 +53,7 @@ const CoffeeCard = ({ coffee }) => {
                 <div className="flex md:flex-col flex-row gap-3 mt-5 md:mt-0">
                     <button className=" p-2 rounded bg-primary-b-c"><FaRegEye className='text-white'></FaRegEye></button>
                     <button className=" p-2 rounded bg-black"><FaPen className='text-white'></FaPen></button>
-                    <button className=" p-2 rounded bg-red-500"><FaRegTrashCan className='text-white'></FaRegTrashCan></button>
+                    <button onClick={() => handleDelete(_id)} className=" p-2 rounded bg-red-500"><FaRegTrashCan className='text-white'></FaRegTrashCan></button>
                 </div>
             </div>
         </div>
@@ -30,7 +61,8 @@ const CoffeeCard = ({ coffee }) => {
 };
 
 CoffeeCard.propTypes = {
-    coffee: PropTypes.object.isRequired
+    coffee: PropTypes.object.isRequired,
+    handleDeleteDisplay:PropTypes.func.isRequired
 };
 
 export default CoffeeCard;
