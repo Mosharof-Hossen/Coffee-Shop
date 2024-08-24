@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom'
 import './App.css'
 import Navbar from './Pages/Shared/Navbar/Navbar'
 import Footer from './Pages/Shared/Footer/Footer'
+import ShortFooter from './Pages/Shared/ShortFooter/ShortFooter'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       </div>
       <div className=''>
         <Footer></Footer>
+        <ShortFooter></ShortFooter>
       </div>
     </div>
   )
