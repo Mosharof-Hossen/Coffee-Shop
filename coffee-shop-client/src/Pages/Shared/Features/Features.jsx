@@ -5,7 +5,7 @@ import icon4 from "../../../assets/icons/4.png"
 
 const Features = () => {
     return (
-        <div className=" flex md:justify-between justify-center md:px-24 px-5 p-6 flex-wrap bg-gray-200">
+        <div className=" flex lg:gap-6 justify-center md:px-24 px-5 p-6 flex-wrap bg-gray-200">
             <div className=" w-[190px] space-y-2 text-center p-2">
                 <img src={icon1} alt="icon1" className="mx-auto"/>
                 <h3 className="font-rancho-c text-3xl">Awesome Aroma</h3>
