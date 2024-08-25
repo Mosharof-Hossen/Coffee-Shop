@@ -15,7 +15,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch("https://coffee-shop-lime.vercel.app/coffees")
+                loader: () => fetch("https://coffee-shop-theta-ten.vercel.app/coffees")
             },
             {
                 path: "/add-new-coffee",
@@ -24,12 +24,12 @@ const router = createBrowserRouter([
             {
                 path: "/update-coffee/:id",
                 element: <UpdateCoffee></UpdateCoffee>,
-                loader: ({ params }) => fetch(`https://coffee-shop-lime.vercel.app/coffee/${params.id}`)
+                loader: ({ params }) => fetch(`https://coffee-shop-theta-ten.vercel.app/coffee/${params.id}`)
             },
             {
                 path: "/coffee-detail/:id",
                 element: <CoffeeDetails></CoffeeDetails>,
-                loader: ({ params }) => fetch(`https://coffee-shop-lime.vercel.app/coffee/${params.id}`)
+                loader: ({ params }) => fetch(`https://coffee-shop-theta-ten.vercel.app/coffee/${params.id}`)
             }
         ]
     }

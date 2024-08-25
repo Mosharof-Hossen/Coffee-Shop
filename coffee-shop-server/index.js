@@ -14,7 +14,8 @@ const password = process.env.PASSWORD;
 const user = process.env.USER;
 
 
-const uri = `mongodb+srv://${user}:${password}@cluster-shop.s8tc27p.mongodb.net/?retryWrites=true&w=majority&appName=Cluster-shop`;
+// const uri = `mongodb+srv://${user}:${password}@cluster-shop.s8tc27p.mongodb.net/?retryWrites=true&w=majority&appName=Cluster-shop`;
+const uri = `mongodb+srv://coffeeShopAdmin:0ykkYUdaK1HstEGJ@cluster-shop.s8tc27p.mongodb.net/?retryWrites=true&w=majority&appName=Cluster-shop`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {

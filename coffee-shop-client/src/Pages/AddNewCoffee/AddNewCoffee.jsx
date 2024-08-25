@@ -12,7 +12,7 @@ const AddNewCoffee = () => {
     } = useForm()
 
     const onSubmit = (data) => {
-        fetch("https://coffee-shop-lime.vercel.app/coffees", {
+        fetch("https://coffee-shop-theta-ten.vercel.app/coffees", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
