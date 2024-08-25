@@ -9,7 +9,7 @@ import Gallery from "../Shared/Gallery/Gallery";
 
 const Home = () => {
     const [coffees, setCoffees] = useState(useLoaderData());
-    console.log(coffees);
+ 
     const handleDeleteDisplay = id => {
         const filteredCoffees = coffees.filter(coffee => coffee._id != id)
 
