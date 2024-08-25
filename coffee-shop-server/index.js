@@ -35,7 +35,8 @@ async function run() {
         app.get("/coffees", async (req, res) => {
             const cursor = coffeeCollection.find();
             const result = await cursor.toArray();
-            res.send(result)
+            console.log("get coffees is called");
+            res.send(result);
         })
 
         app.get("/coffee/:id", async (req, res) => {
@@ -51,19 +52,19 @@ async function run() {
             const coffee = req.body;
             const updatedCoffee = {
                 $set: {
-                    category :coffee.category,
-                    chef :coffee.chef,
-                    coffeeName :coffee.coffeeName,
-                    details :coffee.details,
-                    photo_url :coffee.photo_url,
-                    price :coffee.price,
-                    quantity :coffee.quantity,
-                    supplier :coffee.supplier,
-                    taste :coffee.taste
+                    category: coffee.category,
+                    chef: coffee.chef,
+                    coffeeName: coffee.coffeeName,
+                    details: coffee.details,
+                    photo_url: coffee.photo_url,
+                    price: coffee.price,
+                    quantity: coffee.quantity,
+                    supplier: coffee.supplier,
+                    taste: coffee.taste
 
                 }
             }
-            const result = await coffeeCollection.updateOne(filter,updatedCoffee);
+            const result = await coffeeCollection.updateOne(filter, updatedCoffee);
             res.send(result)
         })
 

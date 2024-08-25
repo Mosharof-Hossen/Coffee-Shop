@@ -14,7 +14,7 @@ const UpdateCoffee = () => {
     } = useForm()
 
     const onSubmit = (data) => {
-        fetch(`http://localhost:3000/coffee/${_id}`, {
+        fetch(`https://coffee-shop-lime.vercel.app/coffee/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

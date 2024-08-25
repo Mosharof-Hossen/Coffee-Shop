@@ -9,6 +9,7 @@ import Gallery from "../Shared/Gallery/Gallery";
 
 const Home = () => {
     const [coffees, setCoffees] = useState(useLoaderData());
+    console.log(coffees);
     const handleDeleteDisplay = id => {
         const filteredCoffees = coffees.filter(coffee => coffee._id != id)
 
@@ -32,7 +33,7 @@ const Home = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 p-5  max-w-6xl mx-auto">
 
                     {
-                        coffees.map(coffee => <CoffeeCard key={coffee._id} handleDeleteDisplay={handleDeleteDisplay} coffee={coffee}></CoffeeCard>)
+                        coffees?.map(coffee => <CoffeeCard key={coffee._id} handleDeleteDisplay={handleDeleteDisplay} coffee={coffee}></CoffeeCard>)
                     }
                 </div>
             </div>
