@@ -1,5 +1,7 @@
 # Project Name : [Perk Up Cafe](https://perkupcafe.netlify.app/)
 
+## Note: For free hosting, the server should be restarted after 30 minutes. So follow the picture below.
+
 ## Features: 
 1. This is a coffee shop web site.
 2. Basically I have implemented CRUD operation on MongoDB database.
